@@ -7,7 +7,7 @@ function Header() {
     <Wrapper>
       <Nav>
         <Link to="">Home</Link>
-        <Link to="form">Form Builder</Link>
+        <Link to="form">Field Builder</Link>
       </Nav>
     </Wrapper>
   );
