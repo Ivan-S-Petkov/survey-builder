@@ -21,10 +21,20 @@ function Order({ displayAlpha, displayAlphaHandler }) {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: normal;
+  }
 `;
 
 const Text = styled.div`
   width: 35%;
+
+  @media (max-width: 550px) {
+    font-weight: 600;
+    width: 100%;
+  }
 `;
 
 const Select = styled.select`
@@ -32,6 +42,7 @@ const Select = styled.select`
   border: 1px solid gray;
   border-radius: 4px;
   flex-grow: 1;
+  font-family: "Work Sans";
 `;
 
 export default Order;

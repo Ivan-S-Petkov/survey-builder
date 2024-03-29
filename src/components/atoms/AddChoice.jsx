@@ -30,10 +30,20 @@ function AddChoice({ choice, choiceHandler, addChoice }) {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: normal;
+  }
 `;
 
 const Text = styled.div`
   width: 35%;
+
+  @media (max-width: 550px) {
+    font-weight: 600;
+    width: 100%;
+  }
 `;
 
 const Data = styled.div`
@@ -46,6 +56,11 @@ const Input = styled.input`
   border: 1px solid gray;
   border-radius: 4px;
   margin-right: 10px;
+  font-family: "Work Sans";
+
+  @media (max-width: 550px) {
+    flex-grow: 1;
+  }
 `;
 
 export default AddChoice;
