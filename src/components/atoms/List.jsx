@@ -32,7 +32,12 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.div`
-  width: 35%;
+  width: 55%;
+  flex-grow: 1;
+
+  @media (max-width: 550px) {
+    width: auto;
+  }
 `;
 
 const Values = styled.div`
@@ -40,6 +45,7 @@ const Values = styled.div`
   flex-direction: column;
   gap: 2px;
   flex-grow: 1;
+  width: 100%;
 `;
 
 const Choice = styled.div`
@@ -47,6 +53,10 @@ const Choice = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 550px) {
+    margin-left: 15px;
+  }
 `;
 
 const RedText = styled.span`
