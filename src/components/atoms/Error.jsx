@@ -11,11 +11,11 @@ function Error() {
   }
 
   useEffect(() => {
-    const interval = setInterval(() => closeHandler(), 8000);
+    const timeout = setTimeout(() => closeHandler(), 8000);
     return () => {
-      clearInterval(interval);
+      clearTimeout(timeout);
     };
-  }, []);
+  }, [error]);
 
   if (!error) {
     return <></>;
@@ -46,6 +46,7 @@ const Wrapper = styled.div`
   border-radius: 4px;
   left: 50%;
   transform: translate(-50%, 0);
+  top: 10px;
 `;
 
 const ErrorContainer = styled.div`
