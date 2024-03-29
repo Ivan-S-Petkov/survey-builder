@@ -42,10 +42,13 @@ function useMultiSelect() {
   }
 
   function addChoice(value) {
-    console.log(value);
     value = value || choice;
+
+    // Check if the new choice already exists
     if (isUniqueChoice(value, choices)) {
+      // Check if the new choice is empty
       if (validChoice(value)) {
+        // Check if it already reached the limit of 50 choices
         if (validateChoicesLength(choices)) {
           setChoices([...choices, value]);
           setChoice("");
@@ -104,17 +107,26 @@ function useMultiSelect() {
   }
 
   function saveForm() {
+    // Defining new variable as choices might change if default value is not part of the list.
+    let finalChoices = [...choices];
+
+    // Check if label is specified
     if (!validLabel(label)) {
       addError("Label field is mandatory!");
       return false;
     }
+
+    // Check if default value is specifified
     if (!validDefaultValue(defaultValue)) {
       addError("Default value is missing!");
       return false;
     }
+
+    // Add default value to choices in case it does not exist
     if (!choices.includes(defaultValue.trim())) {
       if (validateChoicesLength(choices)) {
         addChoice(defaultValue);
+        finalChoices = [...choices, defaultValue];
       } else {
         addError(
           "The default value is not part of the choice list and you reached maximum number of choices!"
@@ -125,7 +137,7 @@ function useMultiSelect() {
     if (!error) {
       let formObject = {
         label,
-        choices,
+        choices: finalChoices,
         default: defaultValue,
         required,
         displayAlpha,
