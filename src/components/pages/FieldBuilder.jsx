@@ -20,6 +20,14 @@ const Wrapper = styled.div`
   border-radius: 7px;
   box-sizing: border-box;
   position: relative;
+
+  @media (max-width: 1200px) {
+    max-width: 75%;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 95%;
+  }
 `;
 
 const Header = styled.div`

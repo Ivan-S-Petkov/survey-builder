@@ -72,6 +72,10 @@ const Wrapper = styled.div`
   gap: 15px;
   width: 75%;
   margin: 0 auto;
+
+  @media (max-width: 550px) {
+    width: 95%;
+  }
 `;
 
 export default MultiSelect;

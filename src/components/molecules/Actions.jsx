@@ -31,17 +31,31 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   margin-top: 10px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 const Column = styled.div`
   width: 35%;
   display: flex;
+
+  @media (max-width: 550px) {
+    width: auto;
+  }
 `;
 
 const Buttons = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    gap: 10px;
+  }
 `;
 
 export default Actions;
