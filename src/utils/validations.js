@@ -15,7 +15,7 @@ function isUniqueChoice(choice, choices) {
 }
 
 function validateChoicesLength(choices) {
-  return choices.length <= 50;
+  return choices.length < 50;
 }
 export {
   validLabel,
